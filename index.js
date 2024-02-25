@@ -4,7 +4,7 @@ const app = express();
 const connectDB = require('./db/conn')
 const cors = require('cors')
 
-const port = 5000;
+const port = process.env.PORT || 5000;
 const hostname = '127.0.0.1'
 
 connectDB().then(()=>{
