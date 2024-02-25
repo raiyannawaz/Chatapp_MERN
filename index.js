@@ -18,13 +18,7 @@ app.get('/', (req, res)=>{
 })
 
 
-const corsOption = {
-    origin: 'http://localhost:3000',
-    methods: 'GET, POST, DELETE, PUT, PATCH, HEAD',
-    credential: true
-}
-
-app.use(cors(corsOption))
+app.use(cors())
 app.use(express.json())
 app.use('/api/auth', require('./routes/user'))
 app.use('/api/messages', require('./routes/messages'))
