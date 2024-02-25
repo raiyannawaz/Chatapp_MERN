@@ -5,7 +5,6 @@ const connectDB = require('./db/conn')
 const cors = require('cors')
 
 const port = process.env.PORT || 5000;
-const hostname = process.env.HOSTNAME
 
 connectDB().then(()=>{
     console.log('Connecting...')
@@ -23,6 +22,6 @@ app.use(express.json())
 app.use('/api/auth', require('./routes/user'))
 app.use('/api/messages', require('./routes/messages'))
 
-app.listen(port, hostname, ()=>{
-    console.log(`http://${hostname}:${port}`)
+app.listen(port, ()=>{
+    console.log(`http://127.0.0.1:${port}`)
 })
